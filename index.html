@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <script defer src="script.js"></script>
+  <title>Quiz App</title>
+</head>
+
+<body onload="NextQuestion(0)">
+  <main>
+    <!-- creating a popup modal when quiz is completed -->
+    <div class="popup-container" id="score-modal">
+      <div class="popup-content-container">
+        <h1>Well Done! You have completed the quiz.</h1>
+        <div class="result-details">
+          <p>Number of Attempts : 10</p>
+          <p>Wrong Answers : <span id="wrong-answers"></span></p>
+          <p>Right Answers : <span id="right-answers"></span></p>
+          <p>Results : <span id="result-percentage"></span>%</p>
+          <p><span id="comments"></span></p>
+        </div>
+
+        <div class="popup-button-container">
+          <button onclick="closeScoreModal()">Continue</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="quiz-container">
+      <h1> Geography Quiz Questions</h1>
+      <!-- include a counter for result and question -->
+      <div class="quiz-details-container">
+        <h1>Result : <span id="user-score"></span> / 10</h1>
+        <h1> Question : <span id="question-number"></span> / 10</h1>
+
+      </div>
+
+      <div class="quiz-question-container">
+        <h1 id="show-question"></h1>
+      </div>
+
+      <!-- answer choices for user to select -->
+      <div class="quiz-choices-container">
+        <!-- popup modal when no answer was selected and next was clicked -->
+        <div class="popup-container" id="choice-modal">
+          <div class="popup-content-container">
+            <h1>Please Pick An Answer</h1>
+            <div class="popup-button-container">
+              <button onclick="closeChoiceModal()">Continue</button>
+            </div>
+          </div>
+        </div>
+
+        <span>
+          <input type="radio" id="choice-one" name="option" class="radio" value="choiceA" />
+          <label for="choice-one" class="option" id="choice-one-label"></label>
+        </span>
+
+
+        <span>
+          <input type="radio" id="choice-two" name="option" class="radio" value="choiceB" />
+          <label for="choice-two" class="option" id="choice-two-label"></label>
+        </span>
+
+
+        <span>
+          <input type="radio" id="choice-three" name="option" class="radio" value="choiceC" />
+          <label for="choice-three" class="option" id="choice-three-label"></label>
+        </span>
+
+
+        <span>
+          <input type="radio" id="choice-four" name="option" class="radio" value="choiceD" />
+          <label for="choice-four" class="option" id="choice-four-label"></label>
+        </span>
+
+
+      </div>
+
+      <div class="next-button-container">
+        <button onclick="handleNextQuestion()">Next Question</button>
+      </div>
+
+    </div>
+  </main>
+  <script src="index.js"></script>
+</body>
+
+</html>
